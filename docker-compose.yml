@@ -1,5 +1,16 @@
 version: '3.6'
 services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "root"
+      POSTGRES_DB: "dev"
+    ports:
+      5432:5432
+    volumes:
+      - dbdata:/var/lib/postgres/data
+      - ./docker/db/initdb:/docker-entrypoint-initdb.d
   app:
     image: openjdk:8
     ports:
@@ -8,3 +19,6 @@ services:
     volumes:
       - .:/srv:cached
     working_dir: /srv
+
+volumes:
+  dbdata:
