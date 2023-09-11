@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>SpringBoot</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1 th:text="'これはThymeleafですか？'">ｈｔｍｌ－見出し１</h1>
+    <p>はい、SpringBootで推奨されています。</p>
+    <!-- 以下の行を追加 -->
+    <div th:text="'Hello, ' + ${target} + '!!'"></div>
+</body>
+</html>
