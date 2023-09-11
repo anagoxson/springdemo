@@ -12,7 +12,9 @@ services:
       - dbdata:/var/lib/postgres/data
       - ./docker/db/initdb:/docker-entrypoint-initdb.d
   app:
-    image: openjdk:8
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
     ports:
       - 8080:8080
     tty: true
